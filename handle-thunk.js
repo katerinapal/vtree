@@ -1,7 +1,10 @@
-var isVNode = require("./is-vnode")
+/*var isVNode = require("./is-vnode")
 var isVText = require("./is-vtext")
-var isWidget = require("./is-widget")
+var isWidget = require("./is-widget")*/
 var isThunk = require("./is-thunk")
+
+//UPD
+var renderThunk = require('./render-thunk.js');
 
 module.exports = handleThunk
 
@@ -13,6 +16,9 @@ function handleThunk(a, b) {
         renderedB = renderThunk(b, a)
     }
 
+    //console.log(`a`);
+    //console.log(a);
+
     if (isThunk(a)) {
         renderedA = renderThunk(a, null)
     }
@@ -23,7 +29,8 @@ function handleThunk(a, b) {
     }
 }
 
-function renderThunk(thunk, previous) {
+//UPD
+/*function renderThunk(thunk, previous) {
     var renderedThunk = thunk.vnode
 
     if (!renderedThunk) {
@@ -37,4 +44,4 @@ function renderThunk(thunk, previous) {
     }
 
     return renderedThunk
-}
+}*/

@@ -21,6 +21,7 @@
     "is-object": "^0.1.2"
   },
   "devDependencies": {
+    "jest": "^28.1.3",
     "tape": "^3.0.3"
   },
   "licenses": [
@@ -32,7 +33,10 @@
   "scripts": {
     "test": "node ./test/index.js",
     "cover": "istanbul cover --report none --print detail ./test/index.js",
-    "view-cover": "istanbul report html && open ./coverage/index.html"
+    "view-cover": "istanbul report html && open ./coverage/index.html",
+    "gen-test-suite-handle-thunk": "jest --verbose ./generated-tests/handleThunk_handle_thunk_js.test.js --coverage=true",
+    "gen-test-suite-is-thunk": "jest --verbose ./generated-tests/handleThunk_is_thunk_js.test.js --coverage=true",
+    "gen-test-suite-render-thunk": "jest --verbose ./generated-tests/handleThunk_render_thunk_js.test.js --coverage=true"
   },
   "testling": {
     "files": "test/index.js",
